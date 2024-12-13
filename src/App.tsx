@@ -1,7 +1,6 @@
 import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
-
 import {
 	AuthPage,
 	ErrorComponent,
@@ -49,6 +48,9 @@ import {
 	Settings,
 } from "lucide-react";
 import { Sider } from "./components/sider";
+import { Dashboard } from "./pages/dashboard";
+import { Transactions } from "./pages/transactions";
+import { Accounts } from "./pages/accounts";
 
 function App() {
 	return (
@@ -77,7 +79,7 @@ function App() {
 										meta: {
 											canDelete: true,
 											icon: <Home />,
-                                            label: "Dashboard"
+											label: "Dashboard",
 										},
 									},
 									{
@@ -209,10 +211,10 @@ function App() {
 												<NavigateToResource resource="dashboard" />
 											}
 										/>
-										<Route path="/blog-posts">
+										<Route path="/dashboard">
 											<Route
 												index
-												element={<BlogPostList />}
+												element={<Dashboard />}
 											/>
 											<Route
 												path="create"
@@ -227,10 +229,28 @@ function App() {
 												element={<BlogPostShow />}
 											/>
 										</Route>
-										<Route path="/categories">
+										<Route path="/transactions">
 											<Route
 												index
-												element={<CategoryList />}
+												element={<Transactions />}
+											/>
+											<Route
+												path="create"
+												element={<CategoryCreate />}
+											/>
+											<Route
+												path="edit/:id"
+												element={<CategoryEdit />}
+											/>
+											<Route
+												path="show/:id"
+												element={<CategoryShow />}
+											/>
+										</Route>
+										<Route path="/accounts">
+											<Route
+												index
+												element={<Accounts />}
 											/>
 											<Route
 												path="create"
