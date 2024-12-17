@@ -265,6 +265,24 @@ function App() {
 												element={<CategoryShow />}
 											/>
 										</Route>
+										<Route path="/investments">
+											<Route
+												index
+												element={<Accounts />}
+											/>
+											<Route
+												path="create"
+												element={<CategoryCreate />}
+											/>
+											<Route
+												path="edit/:id"
+												element={<CategoryEdit />}
+											/>
+											<Route
+												path="show/:id"
+												element={<CategoryShow />}
+											/>
+										</Route>
 										<Route
 											path="*"
 											element={<ErrorComponent />}
