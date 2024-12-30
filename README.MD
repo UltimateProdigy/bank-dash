@@ -1,4 +1,4 @@
-# 🌟 FinanceFlow
+# 🌟 BankDash
 > Your Personal Financial Command Center
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -7,7 +7,7 @@
 
 ## 🚀 Overview
 
-FinanceFlow is a powerful, modern financial management dashboard that helps you take control of your financial life. Built with TypeScript and React, it provides a seamless experience for managing your accounts, investments, and loans all in one place.
+BankDash is a powerful, modern financial management dashboard that helps you take control of your financial life. Built with TypeScript and React, it provides a seamless experience for managing your accounts, investments, and loans all in one place. Note that this is a work in progress and is not yet ready for production. Most of the features are not yet implemented.
 
 ## ✨ Features
 
