@@ -36,19 +36,19 @@ BankDash is a powerful, modern financial management dashboard that helps you tak
 - React
 - TypeScript
 - Modern CSS
-- [Your preferred state management]
-- [Your preferred UI library]
+- Context API
+- Ant Design
 
 ## 🏃‍♂️ Getting Started
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/financeflow.git
+git clone https://github.com/UltimateProdigy/bank-dash.git
 ```
 
 2. Install dependencies:
 ```bash
-cd financeflow
+cd bank-dash
 npm install
 ```
 
