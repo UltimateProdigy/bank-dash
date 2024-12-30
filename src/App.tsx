@@ -1,11 +1,10 @@
-import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
-import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
+import { Authenticated, Refine } from "@refinedev/core";
+import { DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import {
 	AuthPage,
 	ErrorComponent,
 	ThemedLayoutV2,
-	ThemedSiderV2,
 	useNotificationProvider,
 } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
@@ -45,13 +44,15 @@ import {
 	LaptopIcon,
 	ServerIcon,
 	BanknoteIcon,
-	Settings,
+    PenTool
 } from "lucide-react";
 import { Sider } from "./components/sider";
 import { Dashboard } from "./pages/dashboard";
 import { Transactions } from "./pages/transactions";
 import { Accounts } from "./pages/accounts";
-
+import { Investments } from "./pages/investments";
+import { Loans } from "./pages/loans";
+import Settings from "./pages/settings/list";
 function App() {
 	return (
 		<BrowserRouter>
@@ -116,17 +117,6 @@ function App() {
 										},
 									},
 									{
-										name: "credit-cards",
-										list: "/credit-cards",
-										create: "/credit-cards/create",
-										edit: "/credit-cards/edit/:id",
-										show: "/credit-cards/show/:id",
-										meta: {
-											canDelete: true,
-											icon: <IdCardIcon />,
-										},
-									},
-									{
 										name: "loans",
 										list: "/loans",
 										create: "/loans/create",
@@ -138,36 +128,14 @@ function App() {
 										},
 									},
 									{
-										name: "services",
-										list: "/services",
-										create: "/services/create",
-										edit: "/services/edit/:id",
-										show: "/services/show/:id",
+										name: "settings",
+										list: "/settings",
+										create: "/settings/create",
+										edit: "/settings/edit/:id",
+										show: "/settings/show/:id",
 										meta: {
 											canDelete: true,
-											icon: <ServerIcon />,
-										},
-									},
-									{
-										name: "priviledges",
-										list: "/priviledges",
-										create: "/priviledges/create",
-										edit: "/priviledges/edit/:id",
-										show: "/priviledges/show/:id",
-										meta: {
-											canDelete: true,
-											icon: <BanknoteIcon />,
-										},
-									},
-									{
-										name: "setting",
-										list: "/setting",
-										create: "/setting/create",
-										edit: "/setting/edit/:id",
-										show: "/setting/show/:id",
-										meta: {
-											canDelete: true,
-											icon: <Settings />,
+											icon: <PenTool />,
 										},
 									},
 								]}
@@ -268,8 +236,38 @@ function App() {
 										<Route path="/investments">
 											<Route
 												index
-												element={<Accounts />}
+												element={<Investments />}
 											/>
+											<Route
+												path="create"
+												element={<CategoryCreate />}
+											/>
+											<Route
+												path="edit/:id"
+												element={<CategoryEdit />}
+											/>
+											<Route
+												path="show/:id"
+												element={<CategoryShow />}
+											/>
+										</Route>
+										<Route path="/loans">
+											<Route index element={<Loans />} />
+											<Route
+												path="create"
+												element={<CategoryCreate />}
+											/>
+											<Route
+												path="edit/:id"
+												element={<CategoryEdit />}
+											/>
+											<Route
+												path="show/:id"
+												element={<CategoryShow />}
+											/>
+										</Route>
+										<Route path="/settings">
+											<Route index element={<Settings />} />
 											<Route
 												path="create"
 												element={<CategoryCreate />}
